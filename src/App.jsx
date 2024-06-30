@@ -32,14 +32,14 @@ function App() {
         pc.addTrack(track, localStream);
     });
 
-    webcamVideo.srcObject = localStream;
+    webcamVideo.current.srcObject = localStream;
   }
   
   return (
     <div className='app-container'>
-      <div className='local-video' ref={webcamVideo}>
+      <video className='local-video' ref={webcamVideo} autoPlay>
 
-      </div>
+      </video>
       <button onClick={() => handleLocalVideo()}>Show Local Video</button>
     </div>
   )
