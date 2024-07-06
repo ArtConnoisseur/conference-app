@@ -1,4 +1,4 @@
-import './App.css'; 
+import './Homepage.css'; 
 
 import firebase from 'firebase/compat/app';
 
@@ -12,7 +12,7 @@ import { getFirestore,
 } from 'firebase/firestore';
 
 import { useRef } from 'react';
-import { firebaseConfig } from './private-info';
+import { firebaseConfig } from '../../private-info';
 
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -36,7 +36,7 @@ let remoteStream = null;
 const calls = collection(db, 'calls');
 
 
-function App() {
+function Homepage() {
   const webcamVideo = useRef(null); 
   const callInput = useRef(null);
   const answerVideo = useRef(null);
@@ -138,8 +138,6 @@ function App() {
     });
   }
 
-
-  
   return (
     <div className='app-container'>
       <h2>1. Start your Webcam</h2>
@@ -172,4 +170,4 @@ function App() {
   )
 }
 
-export default App
+export default Homepage;
